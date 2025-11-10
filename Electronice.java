@@ -27,7 +27,8 @@ public abstract class Electronice {
         this.stoc=electronice.stoc;
     }
 
-    public String ToString(){
+    @Override
+    public String toString(){
         return "Model: " + model+"\nPret: "+pret+"\nBrand: "+brand+"\nReview: "+review+"\nStoc: "+stoc;
     }
 }

@@ -6,13 +6,15 @@ public class Casti extends Electronice {
     private String material;
 
     public Casti() {
+        super();
         conectivitate = null;
         noiseCancellation = null;
         greutate = 0.0;
         tipCasti = null;
         material = null;
     }
-    public Casti(String conectivitate, Boolean noiseCancellation, Double greutate, String tipCasti, String material) {
+    public Casti(String model, Double pret, String brand, Double review, Integer stoc, String conectivitate, Boolean noiseCancellation, Double greutate, String tipCasti, String material) {
+        super(model, pret, brand, review, stoc);
         this.conectivitate = conectivitate;
         this.noiseCancellation = noiseCancellation;
         this.greutate = greutate;
@@ -20,6 +22,7 @@ public class Casti extends Electronice {
         this.material = material;
     }
     public Casti(Casti casti) {
+        super(casti);
         this.conectivitate = casti.conectivitate;
         this.noiseCancellation = casti.noiseCancellation;
         this.greutate = casti.greutate;
@@ -28,7 +31,7 @@ public class Casti extends Electronice {
     }
     @Override
     public String toString() {
-        return "Conectivitate: " + conectivitate + "\nNoise Cancellation: " + noiseCancellation
+        return super.toString() + "\nConectivitate: " + conectivitate + "\nNoise Cancellation: " + noiseCancellation
                 + "\nGreutate: " + greutate + "\nTip casti: " + tipCasti + "\nMaterial: " + material;
     }
     public void setConectivitate(String conectivitate) {

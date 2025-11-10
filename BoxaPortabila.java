@@ -6,13 +6,15 @@ public class BoxaPortabila extends Electronice {
     private Double baterie;
 
     public BoxaPortabila() {
+        super();
         putere = 0;
         tipSunet = null;
         NFC = null;
         rezistentaApa = null;
         baterie = 0.0;
     }
-    public BoxaPortabila(Integer putere, String tipSunet, Boolean NFC, String rezistentaApa, Double baterie) {
+    public BoxaPortabila(String model, Double pret, String brand, Double review, Integer stoc, Integer putere, String tipSunet, Boolean NFC, String rezistentaApa, Double baterie) {
+        super(model, pret, brand, review, stoc);
         this.putere = putere;
         this.tipSunet = tipSunet;
         this.NFC = NFC;
@@ -20,6 +22,7 @@ public class BoxaPortabila extends Electronice {
         this.baterie = baterie;
     }
     public BoxaPortabila(BoxaPortabila boxaPortabila) {
+        super(boxaPortabila);
         this.putere = boxaPortabila.putere;
         this.tipSunet = boxaPortabila.tipSunet;
         this.NFC = boxaPortabila.NFC;
@@ -29,7 +32,7 @@ public class BoxaPortabila extends Electronice {
 
     @Override
     public String toString() {
-        return "Putere: " + putere + "\nTip sunet: " + tipSunet + "\nConectivitate NFC: " + NFC
+        return super.toString() + "\nPutere: " + putere + "\nTip sunet: " + tipSunet + "\nConectivitate NFC: " + NFC
                 + "\nReistenta apa: " + rezistentaApa + "\nBaterie: " + baterie;
     }
 
