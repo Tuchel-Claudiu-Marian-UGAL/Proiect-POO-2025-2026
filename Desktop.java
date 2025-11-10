@@ -47,4 +47,45 @@ public class Desktop extends Electronice {
         return super.toString()+"\nCuloare: "+this.culoare+"\nProcesor: "+this.procesor+"GHz"+"\nRAM: "+
                 this.RAM+"\nSpatiu Stocare: "+this.spatiuStocare+"GB"+"\nPlaca video: "+this.placaVideo;
     }
+    
+     public String getCuloare() {
+        return culoare;
+    }
+
+    public void setCuloare(String culoare) {
+        this.culoare = culoare;
+    }
+
+    public String getProcesor() {
+        return procesor;
+    }
+
+    public void setProcesor(String procesor) {
+        this.procesor = procesor;
+    }
+
+    public String getPlacaVideo() {
+        return placaVideo;
+    }
+
+    public void setPlacaVideo(String placaVideo) {
+        this.placaVideo = placaVideo;
+    }
+
+    public Integer getRAM() {
+        return RAM;
+    }
+
+    public void setRAM(Integer RAM) {
+        this.RAM = RAM;
+    }
+
+    public Integer getSpatiuStocare() {
+        return spatiuStocare;
+    }
+
+    public void setSpatiuStocare(Integer spatiuStocare) {
+        this.spatiuStocare = spatiuStocare;
+    }
+
 }
