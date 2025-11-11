@@ -1,4 +1,4 @@
-public class Casti extends Electronice {
+public class Casti extends Electronice implements InterfataBoxaCasti {
     private String conectivitate;
     private Boolean noiseCancellation;
     private Double greutate;
@@ -64,5 +64,14 @@ public class Casti extends Electronice {
     }
     public String getMaterial() {
         return material;
+    }
+
+    @Override
+    public void porneste() {
+        System.out.println("Casti pornite.");
+    }
+    @Override
+    public void conectareBluetooth() {
+        System.out.println("Casti conectate prin Bluetooth.");
     }
 }

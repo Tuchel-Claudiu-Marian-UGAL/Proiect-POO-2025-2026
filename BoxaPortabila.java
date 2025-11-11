@@ -1,4 +1,4 @@
-public class BoxaPortabila extends Electronice {
+public class BoxaPortabila extends Electronice implements InterfataBoxaCasti {
     private Integer putere;
     private String tipSunet;
     private Boolean NFC;
@@ -66,5 +66,14 @@ public class BoxaPortabila extends Electronice {
     }
     public Double getBaterie() {
         return baterie;
+    }
+
+    @Override
+    public void porneste() {
+        System.out.println("Boxa portabila a fost pornita.");
+    }
+    @Override
+    public void conectareBluetooth() {
+        System.out.println("Boxa portabila s-a conectat prin Bluetooth.");
     }
 }
