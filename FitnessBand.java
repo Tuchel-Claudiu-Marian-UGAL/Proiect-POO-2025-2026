@@ -1,9 +1,10 @@
-public class FitnessBand extends Electronice {
+public class FitnessBand extends Electronice implements ConectareBT{
     private boolean monitorRitmCardiac;
     private boolean rezistentaApa;
     private int pasiPeZi;
     private boolean notificariTelefon;
     private boolean modSportMultiplu;
+    private boolean conexiuneBT;
 
     public FitnessBand(){
         this.monitorRitmCardiac=false;
@@ -64,6 +65,17 @@ public class FitnessBand extends Electronice {
     }
     public boolean getModSportMultiplu(){
         return modSportMultiplu;
+    }
+    @Override
+    public void ConectatBT(){
+        System.out.println("Fitnessband conectat");
+        conexiuneBT=true;
+    }
+
+    @Override
+    public void DeconectatBT(){
+        System.out.println("Fitnessband deconectat");
+        conexiuneBT=false;
     }
 
     @Override

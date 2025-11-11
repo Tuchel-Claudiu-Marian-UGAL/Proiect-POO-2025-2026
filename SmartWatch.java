@@ -1,9 +1,10 @@
-public class SmartWatch extends  Electronice {
+public class SmartWatch extends  Electronice implements ConectareBT {
     private boolean areGPS;
     private boolean areSim;
     private int durataBaterie;
     private boolean monitorSomn;
     private boolean incarcareWireless;
+    private boolean conectareBt;
 
     public SmartWatch(){
         super();
@@ -66,8 +67,20 @@ public class SmartWatch extends  Electronice {
     }
 
     @Override
+    public void ConectatBT(){
+        System.out.println("Smartwatch conectat");
+        conectareBt=true;
+    }
+
+    @Override
+    public void DeconectatBT(){
+        System.out.println("Smartwatch deconectat");
+        conectareBt=false;
+    }
+
+    @Override
     public String toString(){
-        return super.toString() + "Are GPS: " + areGPS+"\nAre Sim: " + areSim + "\nDurata Baterie: "
+        return super.toString() + "\nAre GPS: " + areGPS+"\nAre Sim: " + areSim + "\nDurata Baterie: "
                  + durataBaterie + "\nMonitor Somn: " + monitorSomn + "\nIncarcare Wireless: " + incarcareWireless ;
     }
 
