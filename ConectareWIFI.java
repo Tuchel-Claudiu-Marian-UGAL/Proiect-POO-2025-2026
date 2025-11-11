@@ -8,6 +8,7 @@ package com.mycompany.proiectpoo;
  *
  * @author Student
  */
-public class ConectareWIFI {
-    
+public interface ConectareWIFI {
+    public void conectat();
+    public void deconectat();
 }
