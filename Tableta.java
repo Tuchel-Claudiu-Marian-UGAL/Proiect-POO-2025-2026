@@ -16,7 +16,7 @@ public class Tableta extends Electronice {
         this.conectivitate_tableta="SIM";
         this.rezolutie_tableta="1920 X 1200";
         this.diagonala_tableta=10;
-    
+
     }
     public Tableta(String model,Double pret,String brand,Double review,Integer stoc,String rezolutie_tableta,Integer RAM_tableta,Integer memorie_tableta,String SO_tableta,boolean g5_tableta,String conectivitate_tableta,Integer diagonala_tableta){
         super(model,pret,brand,review,stoc);
@@ -27,21 +27,22 @@ public class Tableta extends Electronice {
         this.conectivitate_tableta=conectivitate_tableta;
         this.rezolutie_tableta=rezolutie_tableta;
         this.diagonala_tableta=diagonala_tableta;
+
     }
-     public Tableta(Tableta tableta){
+    public Tableta(Tableta tableta) {
         super(tableta);
-        this.RAM_tableta=RAM_tableta;
-        this.SO_tableta=SO_tableta;
-        this.memorie_tableta=memorie_tableta;
-        this.g5_tableta=g5_tableta;
-        this.conectivitate_tableta=conectivitate_tableta;
-        this.rezolutie_tableta=rezolutie_tableta;
-        this.diagonala_tableta=diagonala_tableta;
-    
+        this.RAM_tableta = tableta.RAM_tableta;
+        this.SO_tableta = tableta.SO_tableta;
+        this.memorie_tableta = tableta.memorie_tableta;
+        this.g5_tableta = tableta.g5_tableta;
+        this.conectivitate_tableta = tableta.conectivitate_tableta;
+        this.rezolutie_tableta = tableta.rezolutie_tableta;
+        this.diagonala_tableta = tableta.diagonala_tableta;
     }
+
     @Override
-    public String toString(){
-        return super.toString()+ "\nConectivitate: " + conectivitate_tableta + "\nRAM: " + RAM_tableta + "\nmemorie: " + memorie_tableta + "\nSO: " + SO_tableta + "\n5G: " + g5_tableta + "\nrezolutie" + rezolutie_tableta + "\ndiagonala" + diagonala_tableta;
+    public String toString() {
+        return super.toString()+ "Conectivitate: " + conectivitate_tableta + "\nRAM: " + RAM_tableta + "\nmemorie: " + memorie_tableta + "\nSO: " + SO_tableta + "\n5G: " + g5_tableta + "\nrezolutie" + rezolutie_tableta + "\ndiagonala" + diagonala_tableta;
     }
     public String getRezolutie() {
         return rezolutie_tableta;
@@ -59,7 +60,7 @@ public class Tableta extends Electronice {
         return SO_tableta;
     }
 
-    public boolean isG5() {   
+    public boolean isG5() {
         return g5_tableta;
     }
 
@@ -71,7 +72,7 @@ public class Tableta extends Electronice {
         return diagonala_tableta;
     }
 
-    
+
     public void setRezolutie(String rezolutie) {
         this.rezolutie_tableta = rezolutie_tableta;
     }
@@ -101,3 +102,4 @@ public class Tableta extends Electronice {
     }
 
 }
+

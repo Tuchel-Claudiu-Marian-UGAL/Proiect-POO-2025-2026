@@ -18,7 +18,7 @@ public class Telefon extends Electronice {
         this.rezolutie_telefon="1920 X 1200";
         this.diagonala_telefon=10;
         this.TipDisplay_telefon="Oled";
-    
+
     }
     public Telefon(String model,Double pret,String brand,Double review,Integer stoc,String rezolutie_telefon,Integer RAM_telefon,Integer memorie_telefon,String SO_telefon,boolean g5_telefon,String conectivitate_telefon,Integer diagonala_telefon,String TipDisplay_telefon){
         super(model,pret,brand,review,stoc);
@@ -30,22 +30,23 @@ public class Telefon extends Electronice {
         this.rezolutie_telefon=rezolutie_telefon;
         this.diagonala_telefon=diagonala_telefon;
         this.TipDisplay_telefon=TipDisplay_telefon;
+
     }
-    public Telefon(Telefon telefon){
+    public Telefon(Telefon telefon) {
         super(telefon);
-        this.RAM_telefon=RAM_telefon;
-        this.SO_telefon=SO_telefon;
-        this.memorie_telefon=memorie_telefon;
-        this.g5_telefon=g5_telefon;
-        this.conectivitate_telefon=conectivitate_telefon;
-        this.rezolutie_telefon=rezolutie_telefon;
-        this.diagonala_telefon=diagonala_telefon;
-        this.TipDisplay_telefon=TipDisplay_telefon;
-    
+        this.RAM_telefon = telefon.RAM_telefon;
+        this.SO_telefon = telefon.SO_telefon;
+        this.memorie_telefon = telefon.memorie_telefon;
+        this.g5_telefon = telefon.g5_telefon;
+        this.conectivitate_telefon = telefon.conectivitate_telefon;
+        this.rezolutie_telefon = telefon.rezolutie_telefon;
+        this.diagonala_telefon = telefon.diagonala_telefon;
+        this.TipDisplay_telefon = telefon.TipDisplay_telefon;
     }
+
     @Override
-    public String toString(){
-        return super.toString()+ "\nConectivitate: " + conectivitate_telefon + "\nRAM: " + RAM_telefon + "\nmemorie: " + memorie_telefon + "\nSO: " + SO_telefon + "\n5G: " + g5_telefon + "\nrezolutie " + rezolutie_telefon + "\ndiagonala " + diagonala_telefon + "\n Tip Display " + TipDisplay_telefon;
+    public String toString() {
+        return super.toString()+ "Conectivitate: " + conectivitate_telefon + "\nRAM: " + RAM_telefon + "\nmemorie: " + memorie_telefon + "\nSO: " + SO_telefon + "\n5G: " + g5_telefon + "\nrezolutie " + rezolutie_telefon + "\ndiagonala " + diagonala_telefon + "\n Tip Display " + TipDisplay_telefon;
     }
     public String getRezolutie() {
         return rezolutie_telefon;
@@ -63,11 +64,11 @@ public class Telefon extends Electronice {
         return SO_telefon;
     }
 
-    public boolean isG5() {   
+    public boolean isG5tel() {
         return g5_telefon;
     }
 
-    public String getConectivitate() {
+    public String getConectivitateTel() {
         return conectivitate_telefon;
     }
     public String getTipDisplay() {
@@ -78,7 +79,7 @@ public class Telefon extends Electronice {
         return diagonala_telefon;
     }
 
-    
+
     public void setRezolutie(String rezolutie) {
         this.rezolutie_telefon = rezolutie_telefon;
     }
