@@ -1,4 +1,4 @@
-public abstract class Electronice {
+public class Electronice {
     private String model;
     private Double pret;
     private String brand;
@@ -32,3 +32,4 @@ public abstract class Electronice {
         return "Model: " + model+"\nPret: "+pret+"\nBrand: "+brand+"\nReview: "+review+"\nStoc: "+stoc;
     }
 }
+
