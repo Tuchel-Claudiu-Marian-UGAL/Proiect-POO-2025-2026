@@ -7,23 +7,22 @@ public class FitnessBand extends Electronice implements ConectareBT{
     private boolean conexiuneBT;
 
     public FitnessBand(){
+        super();
         this.monitorRitmCardiac=false;
         this.rezistentaApa=false;
         this.pasiPeZi=0;
         this.notificariTelefon=false;
         this.modSportMultiplu=false;
-        super();
     }
 
     public FitnessBand (boolean monitorRitmCardiac,boolean rezistentaApa,int pasiPeZi,boolean notificariTelefon,
                         boolean modSportMultiplu, String model,Double pret,String brand,Double review,Integer stoc){
+        super(model,pret,brand,review,stoc);
         this.monitorRitmCardiac=monitorRitmCardiac;
         this.rezistentaApa=rezistentaApa;
         this.pasiPeZi=pasiPeZi;
         this.notificariTelefon=notificariTelefon;
         this.modSportMultiplu=modSportMultiplu;
-        super(model,pret,brand,review,stoc);
-
     }
 
     public FitnessBand(FitnessBand fitnessBand){
@@ -80,7 +79,7 @@ public class FitnessBand extends Electronice implements ConectareBT{
 
     @Override
     public String toString(){
-        return super.toString() + "Monitor Ritm Cardiac: " + monitorRitmCardiac + "\nRezistenta Apa: " + rezistentaApa+"\nPasi Pe Zi: "
+        return super.toString() + "\nMonitor Ritm Cardiac: " + monitorRitmCardiac + "\nRezistenta Apa: " + rezistentaApa+"\nPasi Pe Zi: "
                 + pasiPeZi + "\nNotificari Telefon: " + notificariTelefon + "\nMod Sport Multiplu: " + modSportMultiplu;
     }
 

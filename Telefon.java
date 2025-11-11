@@ -1,13 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package ro.ugal.aciee.magazin;
-
-/**
- *
- * @author sc320
- */
 public class Telefon extends Electronice {
     String rezolutie_telefon;
     Integer RAM_telefon;
@@ -40,7 +30,6 @@ public class Telefon extends Electronice {
         this.rezolutie_telefon=rezolutie_telefon;
         this.diagonala_telefon=diagonala_telefon;
         this.TipDisplay_telefon=TipDisplay_telefon;
-    
     }
     public Telefon(Telefon telefon){
         super(telefon);
@@ -55,8 +44,8 @@ public class Telefon extends Electronice {
     
     }
     @Override
-    public String ToString(){
-        return super.toString()+ "Conectivitate: " + conectivitate_telefon + "\nRAM: " + RAM_telefon + "\nmemorie: " + memorie_telefon + "\nSO: " + SO_telefon + "\n5G: " + g5_telefon + "\nrezolutie " + rezolutie_telefon + "\ndiagonala " + diagonala_telefon + "\n Tip Display " + TipDisplay_telefon;
+    public String toString(){
+        return super.toString()+ "\nConectivitate: " + conectivitate_telefon + "\nRAM: " + RAM_telefon + "\nmemorie: " + memorie_telefon + "\nSO: " + SO_telefon + "\n5G: " + g5_telefon + "\nrezolutie " + rezolutie_telefon + "\ndiagonala " + diagonala_telefon + "\n Tip Display " + TipDisplay_telefon;
     }
     public String getRezolutie() {
         return rezolutie_telefon;

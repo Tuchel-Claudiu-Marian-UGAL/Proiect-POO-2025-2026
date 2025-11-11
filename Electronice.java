@@ -32,4 +32,3 @@ public class Electronice {
         return "Model: " + model+"\nPret: "+pret+"\nBrand: "+brand+"\nReview: "+review+"\nStoc: "+stoc;
     }
 }
-

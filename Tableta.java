@@ -1,13 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package ro.ugal.aciee.magazin;
-
-/**
- *
- * @author sc320
- */
 public class Tableta extends Electronice {
     String rezolutie_tableta;
     Integer RAM_tableta;
@@ -37,7 +27,6 @@ public class Tableta extends Electronice {
         this.conectivitate_tableta=conectivitate_tableta;
         this.rezolutie_tableta=rezolutie_tableta;
         this.diagonala_tableta=diagonala_tableta;
-    
     }
      public Tableta(Tableta tableta){
         super(tableta);
@@ -51,8 +40,8 @@ public class Tableta extends Electronice {
     
     }
     @Override
-    public String ToString(){
-        return super.toString()+ "Conectivitate: " + conectivitate_tableta + "\nRAM: " + RAM_tableta + "\nmemorie: " + memorie_tableta + "\nSO: " + SO_tableta + "\n5G: " + g5_tableta + "\nrezolutie" + rezolutie_tableta + "\ndiagonala" + diagonala_tableta;
+    public String toString(){
+        return super.toString()+ "\nConectivitate: " + conectivitate_tableta + "\nRAM: " + RAM_tableta + "\nmemorie: " + memorie_tableta + "\nSO: " + SO_tableta + "\n5G: " + g5_tableta + "\nrezolutie" + rezolutie_tableta + "\ndiagonala" + diagonala_tableta;
     }
     public String getRezolutie() {
         return rezolutie_tableta;
