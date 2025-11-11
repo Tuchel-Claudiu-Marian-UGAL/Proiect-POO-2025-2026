@@ -8,12 +8,13 @@ package com.mycompany.proiectpoo;
  *
  * @author Student
  */
-public class Desktop extends Electronice {
+public class Desktop extends Electronice implements ConectareWIFI {
     private String culoare;
     private String procesor;
     private String placaVideo;
     private Integer RAM;
     private Integer spatiuStocare;
+    private boolean conectat=false;
     
     public Desktop(){
         this.culoare=null;
@@ -47,6 +48,15 @@ public class Desktop extends Electronice {
         return super.toString()+"\nCuloare: "+this.culoare+"\nProcesor: "+this.procesor+"GHz"+"\nRAM: "+
                 this.RAM+"\nSpatiu Stocare: "+this.spatiuStocare+"GB"+"\nPlaca video: "+this.placaVideo;
     }
+    @Override
+    public void conectat(){
+        System.out.println("Desktopul este conectat la WIFI");
+    }
+    @Override
+    public void deconectat(){
+        System.out.println("Desktopul s-a deconectat la WIFI");
+    }
+    
     
      public String getCuloare() {
         return culoare;

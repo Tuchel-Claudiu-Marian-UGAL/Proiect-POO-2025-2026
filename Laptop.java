@@ -8,7 +8,7 @@ package com.mycompany.proiectpoo;
  *
  * @author Student
  */
-public class Laptop extends Electronice{
+public class Laptop extends Electronice implements ConectareWIFI{
     private String culoare;
     private String procesor;
     private Double frecventaMaxima;
@@ -17,6 +17,7 @@ public class Laptop extends Electronice{
     private Integer spatiuStocare;
     private boolean placaIntegrata;
     private boolean areOS;
+    private boolean conectat=false;
     
     public Laptop(){
         this.culoare=null;
@@ -59,6 +60,18 @@ public class Laptop extends Electronice{
         return super.toString()+"\nCuloare: "+this.culoare+"\nProcesor: "+this.procesor+
                 "\nFrecventa maxima: "+this.frecventaMaxima+"GHz"+"\nMarime diagonala: "+this.diagonala+"\nRAM: "+
                 this.RAM+"\nSpatiu Stocare: "+this.spatiuStocare+"GB"+"\nPlaca integrata: "+this.placaIntegrata+"\nareOS: "+this.areOS;
+    }
+    @Override
+    public void conectat(){
+        System.out.println("Laptopul este conectat la WIFI");
+        conectat=true;
+    }
+    @Override
+    public void deconectat(){
+        if (conectat){
+        System.out.println("Laptopul s-a deconectat la WIFI");}
+        else
+            System.out.println("Eroare: Laptopul nu a fost conectat");
     }
     
     public String getCuloare() {
