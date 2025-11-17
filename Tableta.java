@@ -1,11 +1,13 @@
-public class Tableta extends Electronice {
+public class Tableta extends Electronice implements Conectivitate {
     String rezolutie_tableta;
     Integer RAM_tableta;
     Integer memorie_tableta;
     String SO_tableta;
     boolean g5_tableta;
     String conectivitate_tableta;
-    Integer diagonala_tableta;
+    Double diagonala_tableta;
+    boolean areWiFi_tab;
+
     public Tableta()
     {
         super();
@@ -15,10 +17,10 @@ public class Tableta extends Electronice {
         this.g5_tableta=false;
         this.conectivitate_tableta="SIM";
         this.rezolutie_tableta="1920 X 1200";
-        this.diagonala_tableta=10;
+        this.diagonala_tableta=10.2;
 
     }
-    public Tableta(String model,Double pret,String brand,Double review,Integer stoc,String rezolutie_tableta,Integer RAM_tableta,Integer memorie_tableta,String SO_tableta,boolean g5_tableta,String conectivitate_tableta,Integer diagonala_tableta){
+    public Tableta(String model,Double pret,String brand,Double review,Integer stoc,String rezolutie_tableta,Integer RAM_tableta,Integer memorie_tableta,String SO_tableta,boolean g5_tableta,String conectivitate_tableta,Double diagonala_tableta,boolean areWiFi_tab){
         super(model,pret,brand,review,stoc);
         this.RAM_tableta=RAM_tableta;
         this.SO_tableta=SO_tableta;
@@ -27,6 +29,7 @@ public class Tableta extends Electronice {
         this.conectivitate_tableta=conectivitate_tableta;
         this.rezolutie_tableta=rezolutie_tableta;
         this.diagonala_tableta=diagonala_tableta;
+        this.areWiFi_tab = areWiFi_tab;
 
     }
     public Tableta(Tableta tableta) {
@@ -38,11 +41,12 @@ public class Tableta extends Electronice {
         this.conectivitate_tableta = tableta.conectivitate_tableta;
         this.rezolutie_tableta = tableta.rezolutie_tableta;
         this.diagonala_tableta = tableta.diagonala_tableta;
+        this.areWiFi_tab = areWiFi_tab;
     }
 
     @Override
     public String toString() {
-        return super.toString()+ "Conectivitate: " + conectivitate_tableta + "\nRAM: " + RAM_tableta + "\nmemorie: " + memorie_tableta + "\nSO: " + SO_tableta + "\n5G: " + g5_tableta + "\nrezolutie" + rezolutie_tableta + "\ndiagonala" + diagonala_tableta;
+        return super.toString()+ "\nConectivitate: " + conectivitate_tableta + "\nRAM: " + RAM_tableta + "\nmemorie: " + memorie_tableta + "\nSO: " + SO_tableta + "\n5G: " + g5_tableta + "\nrezolutie" + rezolutie_tableta + "\ndiagonala" + diagonala_tableta;
     }
     public String getRezolutie() {
         return rezolutie_tableta;
@@ -68,7 +72,7 @@ public class Tableta extends Electronice {
         return conectivitate_tableta;
     }
 
-    public Integer getDiagonala() {
+    public Double getDiagonala() {
         return diagonala_tableta;
     }
 
@@ -100,6 +104,28 @@ public class Tableta extends Electronice {
     public void setDiagonala(Integer diagonala) {
         this.diagonala_tableta = diagonala_tableta;
     }
+    @Override
+    public String conexiuneWIFi() {
+        return areWiFi_tab ? "Tableta este conectata la WiFi" : "Tableta nu este conectata la WiFi";
+    }
+
+        @Override
+        public String functioneaza() {
+            if (SO_tableta.equalsIgnoreCase("iPadOS")) {
+                return "Tableta functioneaza intr-un ecosistem Apple";
+            } else if (SO_tableta.equalsIgnoreCase("Android")) {
+                return "Tableta are acces la Google Play si este compatibil cu servicii Google";
+            } else {
+                return "Tableta ruleaza pe un sistem de operare alternativ: " + SO_tableta;
+            }
+        }
+
+
+
+
+
+
+
 
 }
 

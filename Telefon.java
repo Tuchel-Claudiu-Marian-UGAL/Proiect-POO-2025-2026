@@ -1,12 +1,13 @@
-public class Telefon extends Electronice {
+public class Telefon extends Electronice implements Conectivitate{
     String rezolutie_telefon;
     Integer RAM_telefon;
     Integer memorie_telefon;
     String SO_telefon;
     boolean g5_telefon;
     String conectivitate_telefon;
-    Integer diagonala_telefon;
+    Double diagonala_telefon;
     String TipDisplay_telefon;
+    boolean areWiFi_tel;
     public Telefon()
     {
         super();
@@ -16,11 +17,11 @@ public class Telefon extends Electronice {
         this.g5_telefon=false;
         this.conectivitate_telefon="SIM";
         this.rezolutie_telefon="1920 X 1200";
-        this.diagonala_telefon=10;
+        this.diagonala_telefon=5.6;
         this.TipDisplay_telefon="Oled";
 
     }
-    public Telefon(String model,Double pret,String brand,Double review,Integer stoc,String rezolutie_telefon,Integer RAM_telefon,Integer memorie_telefon,String SO_telefon,boolean g5_telefon,String conectivitate_telefon,Integer diagonala_telefon,String TipDisplay_telefon){
+    public Telefon(String model,Double pret,String brand,Double review,Integer stoc,String rezolutie_telefon,Integer RAM_telefon,Integer memorie_telefon,String SO_telefon,boolean g5_telefon,String conectivitate_telefon,Double diagonala_telefon,String TipDisplay_telefon, boolean areWiFi_tel){
         super(model,pret,brand,review,stoc);
         this.RAM_telefon=RAM_telefon;
         this.SO_telefon=SO_telefon;
@@ -30,6 +31,7 @@ public class Telefon extends Electronice {
         this.rezolutie_telefon=rezolutie_telefon;
         this.diagonala_telefon=diagonala_telefon;
         this.TipDisplay_telefon=TipDisplay_telefon;
+        this.areWiFi_tel=areWiFi_tel;
 
     }
     public Telefon(Telefon telefon) {
@@ -42,11 +44,12 @@ public class Telefon extends Electronice {
         this.rezolutie_telefon = telefon.rezolutie_telefon;
         this.diagonala_telefon = telefon.diagonala_telefon;
         this.TipDisplay_telefon = telefon.TipDisplay_telefon;
+        this.areWiFi_tel = telefon.areWiFi_tel;
     }
 
     @Override
     public String toString() {
-        return super.toString()+ "Conectivitate: " + conectivitate_telefon + "\nRAM: " + RAM_telefon + "\nmemorie: " + memorie_telefon + "\nSO: " + SO_telefon + "\n5G: " + g5_telefon + "\nrezolutie " + rezolutie_telefon + "\ndiagonala " + diagonala_telefon + "\n Tip Display " + TipDisplay_telefon;
+        return super.toString()+ "\nConectivitate: " + conectivitate_telefon + "\nRAM: " + RAM_telefon + "\nmemorie: " + memorie_telefon + "\nSO: " + SO_telefon + "\n5G: " + g5_telefon + "\nrezolutie " + rezolutie_telefon + "\ndiagonala " + diagonala_telefon + "\n Tip Display " + TipDisplay_telefon;
     }
     public String getRezolutie() {
         return rezolutie_telefon;
@@ -75,7 +78,7 @@ public class Telefon extends Electronice {
         return TipDisplay_telefon;
     }
 
-    public Integer getDiagonala() {
+    public Double getDiagonala() {
         return diagonala_telefon;
     }
 
@@ -110,5 +113,21 @@ public class Telefon extends Electronice {
     public void setTipDisplay(String TipDisplay) {
         this.TipDisplay_telefon = TipDisplay_telefon;
     }
+    @Override
+    public String conexiuneWIFi() {
+        return areWiFi_tel ? "Telefonul este conectat la WiFi" : "Telefonul nu este conectat la WiFi";
+    }
+
+    @Override
+    public String functioneaza() {
+        if (SO_telefon.equalsIgnoreCase("iOS")) {
+            return "Telefonul functioneaza in ecosistemul Apple";
+        } else if (SO_telefon.equalsIgnoreCase("Android")) {
+            return "Telefonul are acces la Google Play si este compatibil cu servicii Google";
+        } else {
+            return "Telefonul ruleaza un sistem de operare alternativ: " + SO_telefon;
+        }
+    }
+
 
 }
